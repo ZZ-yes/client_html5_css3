@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    在html中，元素可以被分为块元素和行内元素
+    块元素（block）
+    - 块元素会独占页面的一行自上向下垂直排列
+    - 块元素用来对网页进行布局，将一个网页分成一块一块
+    - 最常用的块元素：div
+
+    行内元素（inline）
+    - 行内元素只会占用自身的大小，自左向右水平排列
+    - 行内元素一般用来放置文字
+    - 最常用的行内元素：span
+
+    元素的嵌套规则：
+    - 块元素中可以放置块元素，也可以放置行内元素
+    - 行内元素中尽量不放置块元素
+    - a元素中可以放置除它自身外任何元素
+    - p元素中不能放置块元素
+    
+    
+    替换元素
+    - img 图片替换
+    - iframe 网页替换
+    -->
+
+    <main>main元素</main>
+    <nav>nav元素</nav>
+    <section>section元素</section>
+
+    <hr>
+
+    <a href="">超链接</a>
+    <span>span标签</span>
+
+    <div>
+        <div>
+            我是div中的div
+        </div>
+        <span>
+            我是div中的span
+        </span>
+    </div>
+
+    <a href="https://lilichao.com"></a>
+    <button>点击</button>
+
+
+    <!--
+    
+    注意：浏览器在渲染页面时，会自动修复html中的语法错误
+    -->
+    <p>
+        我是p元素
+    <span>span</span>
+    <a href="">链接</a>
+    <div>我是div</div>
+    </p>
+    
+
+</body>
+</html>
