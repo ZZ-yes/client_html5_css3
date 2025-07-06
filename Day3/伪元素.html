@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        /* 
+            通过before、after可以选中元素开始或结束的位置，从而为其添加内容
+            注意：这里的内容是通过CSS添加的！！不算是网页中的正式内容
+            1.通过它可以为元素添加一些统一的符号
+            2.也可以在特殊场景下通过他们来调整一下页面的样式
+        */
+        div::before{
+            content: "before";
+            color: yellow;
+        }          
+        div::after{
+            content: "after";
+            font-size: large;
+            color: red;
+
+        }
+        section::before{
+            content: ">";
+        }
+        p::first-letter{
+            color: red;
+        }
+        p::first-line{
+            background-color:orange ;
+        }
+        p::selection{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--
+     伪元素
+        - 伪元素表示的是页面中特殊的位置
+        - 伪元素使用::开头
+        ::before
+            - 元素开始的位置
+        ::after
+            - 元素结束的位置
+        ::first-letter
+            -  首字母
+        ::first-line
+            - 首行
+        ::selection
+            - 选中的文字的样式
+    -->
+
+    <div>我是div</div>
+
+    <section>第一个</section>
+    <section>第二个</section>
+    <section>第三个</section>
+
+    <hr>
+
+    <p>多少内存金士顿内存九点十八纷纷拿出就是不是cabs较长时间的成本</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis sunt porro fugit molestias. Quos incidunt nobis temporibus eveniet quidem possimus distinctio, dolor, quae dolorum, quo nemo mollitia. Non, commodi perferendis.</p>
+</body>
+</html>

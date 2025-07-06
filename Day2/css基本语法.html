@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        3.外部样式表
+            -将样式写在外部的css文件中
+            然后通过link标签引入外部的样式
+
+            通过外部样式表，将结构和表现完全分离，使代码易于维护
+          同时代码可以在不同的页面之间进行复用
+          并且外部文件可以利用到浏览器的缓存机制，加快用户的访问速度  
+    -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        /*
+        css注释
+
+
+        基本语法
+
+        选择器 ：用来指定要设置样式的元素
+        声明块：用来设置样式
+                由一对大括号括起来
+                声明块里面是一个一个声明
+                声明是一个名值对：
+                    一个样式名对应一个或多个样式值，之间使用冒号链接，分号结尾
+        */
+        p{
+        
+            color: blueviolet;
+            font-size: 30px;
+        }
+
+
+     </style>
+</head>
+<body>
+    <p>索尼单反</p>
+    <p>反对发射点</p>
+</body>
+</html>

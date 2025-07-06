@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        基本选择器
+           - 元素选择器：根据标签名选择多个元素
+             语法：标签名{}
+             例如：p{}  div{}
+
+           - id选择器：根据元素的id属性选中一个元素
+              语法：#id{}
+              例如：#p1{} #box{} 
+
+           - 类选择器：与id类似，每一个元素都可以指定，用来为元素进行分类
+                      和id不同，可以为多个元素指定相同的class，拥有同一个class的元素可以说™是一类
+                    可以同时为一个元素指定多个class
+                      语法：.class{}
+                      例如：.p1{} .p2{} .p3{}
+           - 通配选择器：选择页面中所有的元素
+                  语法：*{}
+
+        
+        */
+
+        /* #p1{
+            color: rgb(0, 26, 255);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+        .p2{
+            color: aqua;
+        }
+        .p3{
+            font-size: 20px;
+        } */
+
+        *{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        通过CSS选择器，可以选中页面中的指定元素，从而为这些元素设置样式
+    
+    -->
+
+
+
+    <h1 class="p2">会不会比较</h1>
+    <p id="p1">姐姐撒旦是</p>
+    <p class="p2 p3">多数时间是你</p>
+    <div>的基础上的差不多就</div>
+</body>
+</html>

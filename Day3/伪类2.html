@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        :not
+            - 否定伪类，除了某些元素
+        */
+        p:not(.p1){
+            color: blue;
+        }
+        /* p:not(:nth-child(2)){
+            color: blue;
+        } */
+    </style>
+</head>
+<body>
+   <p>1</p>
+   <p class="p1">2</p>
+   <p>3</p>
+   <p>4</p> 
+</body>
+</html>

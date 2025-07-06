@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /*
+        
+        属性选择器
+          - 用来根据元素的属性来选中元素
+          - 语法：
+            [属性名] 选中具有该属性的元素
+            [属性名=属性值] 选中指定属性值的元素
+            [属性名^=属性值] 选中属性值以指定内容开头的元素 
+            [属性名$=属性值] 选中属性值以指定内容结束的元素
+            [属性名*=属性值] 选中属性值包含指定内容的元素
+
+        交集选择器：
+           - 选中同时符合多个选择器元素
+           - 语法：选择器1选择器2选择器3{}
+           例如：div[title=hello]
+                div.box{}
+                div#box1{} 不推荐使用，#box1就已经可以选中，如果使用这种说明css文件某些地方写错了
+        
+        
+        */
+        /* [title]{
+            color: pink;
+        } */
+        div[title=hello]{
+            color: rgb(186, 9, 9);
+            font-size: 30px; 
+        }
+         /* [title^=he]{
+            color: blueviolet;
+         } */
+          /* [title$=lo]{
+            color: rgb(226, 43, 43);
+         } */
+          /* [title*=o]{
+            color: rgb(43, 226, 107);
+         } */
+    </style>
+</head>
+<body>
+    <h1 title="hello">会不会比较</h1>
+    <p title="nihao">姐姐撒旦是</p>
+    <p title="heolo">多数时间是你</p>
+    <div title="hello">的基础上的差不多就</div>
+</body>
+</html>

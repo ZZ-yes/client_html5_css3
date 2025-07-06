@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a:link{
+    
+        color: rgb(0, 255, 42);
+    }
+    a:visited{
+        color: red;
+    }
+    a:hover{
+    
+        color: red;
+    }
+    a:active{
+    
+        color: rgb(255, 225, 0);
+    }
+
+</style>
+<body>
+    <!--
+    伪类是一个特殊的类，用来表示元素的状态,伪类使用：开头
+    像超链接，一个超链接有没有被访问过就是一种特殊的状态
+    在css中，可以使用:visited来表示访问过的 超链接
+
+    link、visited是链接用的
+    hover、active是元素通用的 
+
+    a的伪类：
+        :link
+            -表示正常的超链接（未访问过的）
+        :visited
+            - 访问过的链接,根据用户的历史记录进行判断，由于隐私原因，通过visited只能改变文字的颜色
+        :hover
+            - 鼠标移入的元素
+        :active
+            - 鼠标点击
+    
+    -->
+
+    <a href="https://lilichao.com" class="visited">访问过的超链接</a>
+    <a href="https://lilichao.123com">没访问过的超链接</a>
+
+    <hr>
+
+    <p>你好</p>
+</body>
+</html>
