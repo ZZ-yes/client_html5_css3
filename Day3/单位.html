@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+           
+            长度单位：
+                像素（px）
+                    显示器的图形实际上是一个个小点点构成的
+                    每一个小点就是一个像素
+                    每一台设备的像素大小是不同的，越清晰的设备像素越小
+                百分比（%）
+                设置后元素的属性会根据父元素指定属性的百分比计算
+
+            em
+             1em=当前font-size的大小，默认的字体大小是16
+            
+             rem
+              1rem=1根元素的font-size（html根元素）
+
+
+        */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: rgb(118, 94, 90);
+        }
+        .box4{
+           font-size: 100px;
+
+        }
+        .box3{
+           /*当前box3为100px不是直接参照box4得到的，而是box3继承了box4的font-size*/
+            width: 1em;
+            height: 1em;
+            background-color: green;
+        }
+        html{
+            font-size: 100px;
+        }
+        .box5{
+            width: 1rem;
+            height: 1rem;
+            background-color: tomato;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box4">
+         <div class="box3"></div>
+    </div>
+    <hr>
+    <div class="box5"></div>
+   
+    
+</body>
+</html>

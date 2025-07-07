@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /*
+        
+            样式的冲突
+                - 当我们使用不同的选择器选中同一个元素并设置相同的样式时，就发生了样式冲突
+                - 当样式冲突发生时，哪个样式生效由选择器的优先级（权重）决定
+
+                -比较优先级时，需要将多个选择器的优先级一起计算
+                   优先级高的优先显示，优先级的累加无法跨越数量级
+                   例如：#box  还是#box大
+                        .box1.box2.box3.box4.box5.box6{}
+                   如果优先级一样，则优先显示靠下的样式
+                   如果为样式添加!important，则该样式会获得最高的优先级（慎用），如果有两个important就看选择器
+
+                   注意：分组选择器优先级都是单独计算的！！！
+                   例如：div，#box1,.box2{}=div{}#box1{}.box2{}
+
+
+                继承的样式：没有优先级
+                通配选择器：0，0，0，0
+                元素选择器：0，0，0，1
+                类和伪类选择器：0，0，1，0
+                id选择器：0，1，0，0
+                内联样式：1，0，0，0
+        */
+        div{
+            color: red;
+
+        }
+        .box1{
+
+            color: aqua;
+        }
+        /* }
+        #box2{
+            color: yellow;
+        }
+
+        *{
+            color: deeppink;
+        } */
+        /*
+        内联样式在div上，不在p上，所以是通配选择器和继承样式比较
+        */
+
+    </style>
+</head>
+<body>
+    <div class="box1" id="box2" >我是div
+        <p>
+            我是p
+        </p>
+    </div>
+</body>
+</html>

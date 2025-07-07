@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box1{
+             /*
+                rgba（红色，绿色，蓝色,不透明度）
+                    不透明度需要一个0-1之间的值
+
+                hsl()
+                    - h 色相 0-360
+                    - s 饱和度 0%-100%
+                    - l 亮度 0%-100%
+
+                通过三个两位的十六进制数字来表示一个颜色
+                    语法：#红绿蓝
+                        -每一个颜色的取值范围 00-ff
+                        例如：红色：#ff0000
+                              绿色；#00ff00
+                        如果rgb值是两两重复的，可以进行简写
+                            #aabbcc->#abc
+                            #bbffaa->#bfa
+                            #ff0000->#f00
+
+             */
+            width: 200px;
+            height: 200px;
+            /* background-color: rgb(123,465,676);
+            background-color: rgb(100%,0%,0%); */
+            /* background-color: rgba(111, 222, 333 ,.5); */
+            /* background-color: hsl(0,100%,50%); */
+            background-color: #f00;
+           
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
