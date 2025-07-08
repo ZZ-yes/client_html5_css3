@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            当子元素大小超过父元素内容区时，子元素会从父元素中溢出（overflow）
+        
+            在css中通过overflow这个样式来处理溢出内容，在父元素中设置
+
+            overflow
+                -设置元素如何处理溢出内容
+                - 可选值：
+                visible，默认值，溢出的内容直接在元素外边显示
+                hidden 隐藏溢出的内容
+                scroll 生成双方向滚动条，通过滚动条来查看完整内容
+                auto 根据需要生成滚动条
+        */
+        .box1{
+
+            width: 200px;
+            height: 200px;
+            background-color: #6f1010;
+            overflow: auto;
+        }
+        .box2{
+            width: 100px;
+            height: 300px;
+            background-color: tomato;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus sint quis vitae, adipisci eaque amet modi nisi, veniam labore atque ad soluta dolores impedit odio id eligendi natus? Iure, facere!
+        </div>
+    </div>
+</body>
+</html>

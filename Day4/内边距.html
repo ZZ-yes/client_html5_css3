@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 
+            内容区和边框之间的距离称为内边距
+               共有四个方向的内边距
+                    padding-top 上内边距
+                    padding-bottom 下内边距
+                    padding-right  右内边距
+                    padding-left  左内边距
+
+                    简写属性padding
+                     默认情况下,背景颜色会延伸到内边距上,所以我们无法直观的看到内边距
+
+                     内边距也会影响到盒子可见框的大小
+
+                     一个元素的可见框的大小由内容区,内边距,边框共同决定
+        */
+        .box1{
+
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            padding-top: 100px;
+        }
+
+        .inner{
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box1{
+            box-sizing:border-box ;
+            width: 200px;
+            height: 200px;
+            background-color: #cc1717;
+            border: 10px red solid;
+            padding: 20px;
+            /* 
+                盒子的可见框指可见的部分,大小由内容区.内边距,边框共同决定
+                box-sizing 用来指定盒子可见框的计算
+                    - 可选值
+                        content-box 默认值,width和height用来设置内容区的大小
+                        border-box 设置该值后,width和height用来设置盒子可见框的大小(会自动调整内容区大小)
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

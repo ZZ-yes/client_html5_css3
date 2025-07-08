@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            内容区
+                -行内元素的大小被内容撑开
+                    无法通过width和height来设置行内元素的宽高
+            内边距
+                - padding 行内元素可以设置内边距，但是垂直方向的内边距不会影响布局（会盖住别的元素）
+            边框
+                - border 行内元素可以设置边框，但是垂直方向的边框不会影响到页面的布局（不会挤到别的元素）
+            外边距
+                -margin 行内元素可以设置水平方向的外边距
+
+        */
+
+        span {
+            background-color: #762e2e;
+            width: 200px;
+            height: 200px;
+            /* padding: 100px 100px;
+            border: 10px solid red; */
+            margin: 100px ;
+        }
+        div{
+            background-color: #1b0707;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <div></div>
+</body>
+
+</html>

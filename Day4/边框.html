@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box1{
+
+            width: 200px;
+            height: 200px;
+            background-color: rgb(138, 192, 124);
+
+        /*
+                    border-width 用来指定边框的宽度
+                     10px 20px 30px 40px 上 右 下 左
+                     10px 20px 30px 40px 上 左右 下
+                     10px 20px  上下 左右
+                     5px 则四个边框都是5px
+
+                     border-top-width     单独设置上面的边框
+                     border-right-width   单独设置右边的边框
+                     border-bottom-width  单独设置下面的边框
+                     border-left-width    单独设置左边的边框
+
+                     border-color 颜色1 颜色2 颜色3 颜色4 也是上右下左的顺序
+
+                     border-style 
+                            - solid 实线
+                            - dotted 点状虚线
+                            - dashed 虚线
+                            - double 双线
+
+                    border简写属性,可以同时设置边框的三个样式
+                    border-xxx 简写属性
+                    border-top
+                    border-bottom
+                    border-left
+                    border-right
+
+                */
+            /* border-width: 10px ;
+            border-color: #1f6b25 #691f6b #6b1f1f #6b1f2e; */
+         
+            border-right: 10px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

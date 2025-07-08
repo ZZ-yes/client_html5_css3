@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            外边距同样有四个方向,可以有负数
+                margin-top 上外边距,值越大元素越靠下
+                margin-bottom 
+                margin-left 左外边距,值越大元素越靠右
+                margin-right 
+                由于浏览器默认是按照自左向右,自上向下的顺序来排列元素的
+                所以当我们设置上和左外边距时,是改变元素自身的位置
+                但是设置下和右时,会改变其他元素的位置
+
+
+            外边距的折叠
+                - 垂直方向的相邻外边距会发生外边距折叠的现象
+                    兄弟元素间外边距会取较大值
+                    父子元素间子元素外边距会传递给父元素,这样会导致布局出问题,需要避免该问题
+                    方法1:不用外边距,用内边距
+                    方法2:用外边距的话,让他们不再相邻
+
+                可以将margin的值设置为auto,设置auto后,浏览器会自动计算外边距
+                当我们将margin-left或margin-right中的一个设置为auto时,则浏览器会自动使其尽量的大
+                如果我们将margin-left和margin-right都设置为auto时,浏览器会使元素左右的外边距相同,也就是元素会在其父元素中水平居中
+
+                通过将一个块元素的左右外边距设置为auto,以使其在父元素中水平居中
+                默认情况下,垂直外边距设置auto时,浏览器会自动取0为外边距
+
+
+            */
+
+        /* .box1{
+
+            width: 200px;
+            height: 200px;
+            background-color:#bfa;
+            /* margin-top: 100px; */
+            /* margin: 10px 20px 30px 40px; */
+            /* margin-bottom: 100px; */
+
+
+        /* } */
+         /* .box2{
+
+            width: 200px;
+            height: 200px;
+            background-color:rgb(34, 153, 4);
+           
+
+        } */ 
+        .box3{
+            /* box-sizing: border-box; */
+            width: 800px;
+            height: 800px;
+            border: 10px #fab solid;
+            /* padding-top: 100px; */
+
+
+        }
+        .box4{
+
+            width: 100px;
+            height: 100px;
+            background-color:rgb(153, 4, 29);
+            /* margin-top: 100px; */
+             margin-left: auto;
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+    <hr>
+    <!-- <div class="box1"></div>
+    <div class="box2"></div> -->
+</body>
+</html>
