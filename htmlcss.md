@@ -1073,6 +1073,258 @@ display
 
 ​        auto 根据需要生成滚动条
 
+### Day5
+
+#### 重置样式
+
+为了开发更方便，编写css样式前，我们通常都需要对默认样式进行重置 
+
+​      方式一：
+
+​          *{
+
+​            padding: 0;
+
+​            margin: 0;
+
+​          }
+
+​      方式二：
+
+​        \- 使用reset.css
+
+​        \- https://meyerweb.com/eric/tools/css/reset/reset.css
+
+​        \- 直接清除掉默认样式
+
+引入： <link rel="stylesheet" href="./reset.css"> 
+
+​      方式三：
+
+​        \- 使用normalize.css
+
+​        \- https://necolas.github.io/normalize.css/8.0.1/normalize.css
+
+​        \- 没有直接清除所有样式，而是将默认样式统一
+
+引入：   <link rel="stylesheet" href="./normalize.css">
+
+#### 垂直对齐
+
+在网页中，每个文字被显示时都会有一个文本框与之对应
+
+​        当我们设置元素的font-size时，实际上就是设置文本框的大小
+
+​        在文本框存在一个位置叫做基线（baseline）
+
+
+
+​        文字的垂直对齐
+
+​          默认每个文字和父元素在垂直方向都是沿着基线对齐的
+
+
+
+​           vertical-align:设置元素垂直对齐方式
+
+​            可选值
+
+​              \- baseline 默认值 子元素和父元素的基线对齐
+
+​              \- top 子元素文本框的顶部和父元素文本框的顶部对齐
+
+​              \- bottom 子元素文本框的底部和父元素文本框的底部对齐
+
+​              \- middle 将元素的中线和父元素基线高度+x高度一半的位置对齐
+
+​            在开发中经常通过vertical-align来消除图片下边的空白
+
+#### 图标字体
+
+在网页中，我们经常能看到一些图标，可以使用图片来表示这些图标
+
+​      但是图片有一些不足
+
+​        1.不便于缩放
+
+​        2.无法改变颜色
+
+​      
+
+​      在网页中文字可以任意缩放和改变颜色（文字是矢量图）
+
+
+
+​      所以出现了图标字体（iconfont）
+
+​        所谓的图标字体指的是将小图标制作成字体文件
+
+​        可以使用一些第三方库
+
+​        https://fontawesome.com
+
+​      使用步骤:
+
+​        1.下载(start-download)
+
+​        2.解压缩
+
+​        3.复制css和webfonts到项目下，可以只留个all.css
+
+​        4.在页面中引入all.css
+
+​        5.用法：在页面中添加标签
+
+body中<i class="fa-sharp fa-solid fa-house"></i>
+
+引入<link rel="stylesheet" href="./css/all.css">
+
+#### 文本样式
+
+ text-align:文本的水平对齐方式
+
+​          可选值：
+
+​            \- left 默认值，左对齐
+
+​            \- center：居中对齐
+
+​            \- right：右对齐
+
+​            \- justify 两端对齐
+
+
+
+​        网页中图片、行内块都可以使用文本对齐方式
+
+
+
+​        text-indent:首行缩进，可以设置负数，可以利用负值隐藏网页中的一些元素，font-size：0也可
+
+
+
+​        text-decoration：文本修饰
+
+​          可选值：
+
+​            \- none 默认值 没有修饰
+
+​            \- underline 下划线
+
+​            \- overline 上划线
+
+​            \- line-through 删除线 
+
+​        text-transform: 
+
+​          可选值：
+
+​            \- lowercase 小写
+
+​            \- uppercase 大写
+
+​            \- capitalize 首字母大写
+
+​            \- none  默认值 防止更改所有字符大小写
+
+#### 单行省略
+
+​	/*禁止文字自动换行*/
+
+​      white-space: nowrap;
+
+​      /*禁止文字溢出*/
+
+​      overflow: hidden;
+
+​      /*溢出的内容以省略号显示*/
+
+​      text-overflow: ellipsis;
+
+#### 行高
+
+line-height 用来设置元素的行高
+
+​         行就是用来放文字的
+
+​         行高就是文字所在行的高度，每行都有行高
+
+​         文字默认是在行高中垂直居中     
+
+​         行间距 = 行高 - 字体大小
+
+​         行高可以设置一个数字，那么行高将会是字体大小对应的倍数
+
+#### 字体
+
+font-size  字体大小
+
+​      font-weight 字重
+
+​        可选值
+
+​          \- normal 默认值 正常的粗细
+
+​          \- bold 加粗
+
+​          \- lighter 细的
+
+​      font-style 字体的样式
+
+​        可选值：
+
+​          \- normal 默认值 正常的
+
+​          \- italic 斜体
+
+​      font-family 字体族，使用什么字体
+
+​        \- 字体的分类
+
+​          \- serif 衬线字体
+
+​          \- sans-serif 非衬线字体
+
+​          \- monospace  等宽字体 中文不涉及等宽
+
+
+
+​        当我们将字体设置为上述类型时，浏览器会自动选择相应的字体来显示
+
+
+
+​      font简写属性，可以同时设置字体的相关属性
+
+​        \- font:前边任意，后边两个必须是font-size/line-height font-family
+
+#### font-face
+
+font-face 通过它可以将远程字体提供给用户使用
+
+​          \- 使用的时候要慎用
+
+​            1.下载字体需要花费时间，如果字体文件太大，用户可能无法第一时间下载完成
+
+​            2.使用字体可能会涉及版权问题，小心律师函
+
+@font-face {
+
+​      /*src服务器中字体的路径*/
+
+​      font-family: "test";
+
+​      /*字体的名称，自定义*/
+
+​      src: url("./font.ttf");
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        @font-face {
+            /*src服务器中字体的路径*/
+            font-family: "test";
+            /*字体的名称，自定义*/
+            src: url("./font.ttf");
+        }
+        p{
+            font-size: 20px;
+            /*
+                font-face 通过它可以将远程字体提供给用户使用
+                    - 使用的时候要慎用
+                        1.下载字体需要花费时间，如果字体文件太大，用户可能无法第一时间下载完成
+                        2.使用字体可能会涉及版权问题，小心律师函
+            */
+           
+            font-family: test;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        的加拿大你
+    </p>
+</body>
+</html>
