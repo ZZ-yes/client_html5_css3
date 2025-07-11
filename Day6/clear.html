@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(216, 115, 115);
+            float: left;
+        }
+        .box2{
+            width: 200px;
+            height: 400px;
+            background-color: rgb(84, 118, 220);
+            float: right;
+
+        } */
+        /*因受到box1浮动的影响，box3的位置上移了*/
+        .box3{
+            width: 200px;
+            height: 300px;
+            background-color: rgb(196, 196, 99);
+            
+        }
+        .box3::before{
+            display: table;
+            content: " ";
+        }
+        .box4{
+            
+            margin-top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        /* clear  谁受到影响，就对他进行清除
+                - 清除浮动元素对当前元素产生的影响
+                可选值
+                    - left 清除左侧浮动元素对当前元素产生的影响
+                    - right 清除右侧浮动元素对当前元素产生的影响 
+                    - both 清除最大一侧浮动元素对当前元素的影响
+            */
+    </style>
+</head>
+<body>
+    <!-- <div class="box1"></div>
+    <div class="box2"></div> -->
+    <div class="box3">
+        <div class="box4">box4</div>
+    </div>
+</body>
+</html>

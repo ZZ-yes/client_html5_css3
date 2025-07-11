@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        包含块（containing block）
+            - 在文档流中，包含块就是离当前元素最近的祖先块元素
+备注： 根元素（<html>）所在的包含块是一个被称为初始包含块的矩形。它具有视口（对于连续媒体）或页面区域（对于分页媒体）的尺寸。
+左外边距+左边框+左内边距+内容区+右内边距+右边框+右外边距=包含块内容区宽度
+0+0+0+0+0+0+0=1146.18
+    子元素可见框的宽度+子元素的水平外边距=包含块内容区的宽度  此等式必须满足，强制满足；
+    当等式不满足的时候，同时所有属性值没有auto,那么这个时候浏览器会自动调整右外边距强制等式满足,
+    当我们的宽度没设置的时候，我们的宽度会自动进行设置auto
+
+    -->
+
+
+    <div class="box5">你好</div><!--这时候的box5的包含块就是box4-->
+   
+</body>
+
+</html>

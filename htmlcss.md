@@ -1139,46 +1139,6 @@ display
 
 ​            在开发中经常通过vertical-align来消除图片下边的空白
 
-#### 图标字体
-
-在网页中，我们经常能看到一些图标，可以使用图片来表示这些图标
-
-​      但是图片有一些不足
-
-​        1.不便于缩放
-
-​        2.无法改变颜色
-
-​      
-
-​      在网页中文字可以任意缩放和改变颜色（文字是矢量图）
-
-
-
-​      所以出现了图标字体（iconfont）
-
-​        所谓的图标字体指的是将小图标制作成字体文件
-
-​        可以使用一些第三方库
-
-​        https://fontawesome.com
-
-​      使用步骤:
-
-​        1.下载(start-download)
-
-​        2.解压缩
-
-​        3.复制css和webfonts到项目下，可以只留个all.css
-
-​        4.在页面中引入all.css
-
-​        5.用法：在页面中添加标签
-
-body中<i class="fa-sharp fa-solid fa-house"></i>
-
-引入<link rel="stylesheet" href="./css/all.css">
-
 #### 文本样式
 
  text-align:文本的水平对齐方式
@@ -1316,6 +1276,170 @@ font-face 通过它可以将远程字体提供给用户使用
 ​      /*字体的名称，自定义*/
 
 ​      src: url("./font.ttf");
+
+### Day6
+
+#### 图标字体
+
+在网页中，我们经常能看到一些图标，可以使用图片来表示这些图标
+
+​      但是图片有一些不足
+
+​        1.不便于缩放
+
+​        2.无法改变颜色
+
+​      
+
+​      在网页中文字可以任意缩放和改变颜色（文字是矢量图）
+
+
+
+​      所以出现了图标字体（iconfont）
+
+​        所谓的图标字体指的是将小图标制作成字体文件
+
+​        可以使用一些第三方库
+
+​        https://fontawesome.com
+
+​        https://remixicon.cn/
+
+​        https://www.iconfont.cn/
+
+
+
+​      https://fontawesome.com使用步骤:
+
+​        1.下载(start-download)
+
+​        2.解压缩
+
+​        3.复制css和webfonts到项目下，可以只留个all.css
+
+​        4.在页面中引入all.css
+
+​        5.用法：在页面中添加标签
+
+body中<i class="fa-sharp fa-solid fa-house"></i>
+
+引入<link rel="stylesheet" href="./css/all.css">
+
+​      https://www.iconfont.cn/使用步骤：
+
+​        1.注册登录
+
+​        2.选择图标加入购物车,添加至项目中
+
+​        3.进入项目，下载至本地
+
+​        4.将样式表和字体文件添加到项目中
+
+​        5.引入css
+
+​        6.通过类使用  
+
+```
+<i class="iconfont icon-calendar"></i>
+```
+
+​        实体
+
+```
+  <i class="iconfont">&#xe62c;</i>
+```
+
+#### 轮廓、圆角、阴影
+
+outline 轮廓线 
+
+​        \- 和边框非常像，但outline不会影响到元素可见框的大小，起到修饰作用
+
+示例：outline: 10px solid red;
+
+.box1:hover{
+
+​        outline: 10px dashed red;
+
+​      }
+
+border-radius 圆角
+
+border-top-left-radius: 200px; /*左上*/
+
+​      border-top-right-radius: 200px;/*右上*/
+
+​      border-bottom-left-radius: 200px;/*左下*/
+
+​      border-bottom-right-radius: 200px;/*右下*/
+
+简写属性：
+
+​     border-radius:10px 20px 30px 40px 左上、右上、右下、左下
+
+box-shadow：为元素指定阴影
+
+ box-shadow: 10px 10px 10px 10px rgb(36,36,36,.3);
+
+​        \- x轴偏移量 y轴偏移量 模糊半径 扩散半径 阴影的颜色；
+
+​        可以设置一个inset来表示内部阴影 
+
+#### 文档流
+
+文档流 （normal flow）正常布局流
+
+​        \- 文档流是网页中的位置，我们所创建的元素默认都存在于文档流中
+
+​        \- 文档流中的元素必须要遵循文档流的规则在页面中排列
+
+​           块元素
+
+​            \- 块元素在文档流中自上向下垂直排列
+
+​            \- 块元素的默认宽度会将父元素撑满（默认值为auto）
+
+​            \- 块元素的默认高度被内容撑开
+
+​           行内元素
+
+​            \- 行内元素在文档流中自左向右水平排列，如果一行不足以容纳所有元素
+
+​              则会另起一行继续自左向右水平排列
+
+​            \- 行内元素的默认宽度和高度都被内容撑开
+
+#### 水平布局的等式
+
+子元素会在父元素内容区中排列
+
+​        在文档流中，块元素的水平排列必须要遵循如下一个等式：
+
+​          包含块内容区的宽度 = 子元素可见框宽度 + 子元素的水平外边距
+
+​                    margin-left＋可见框＋margin-right
+
+​                    100 + 200 + 100 = 800 此时右外边距会自动调整为500
+
+​                    500 + 100 +　100 = 800 此时右外边距会自动调整为-200
+
+​                    100 + auto + 100 = 800 宽度为auto，此时auto为600
+
+​                    auto + 200 + auto =800
+
+​                    auto + auto + 200 = 800
+
+​            \- 当属性值中没有auto，此时浏览器会自动调整右外边距已使等式强制满足
+
+​            \- 当属性值为auto，则浏览器会自动调整该值以使等式满足
+
+​            \- 当左右外边距为auto，而width有值，则左右外边距会设置相等的值以使等式满足
+
+​            \- 当外边距和width同时设置为auto，则外边距的auto为0
+
+
+
+​          在文档流中，块元素的垂直排列，不需要遵循等式
 
 
 

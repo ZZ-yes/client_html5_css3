@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* width: 200px; */
+            /* height: 200px; */
+            background-color: red;
+            float: left;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(4, 255, 0);
+            float: left;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float: left;
+        }
+            
+        /*
+        浮动后，之前的布局等式就失效了
+
+            元素脱离文档流的特点
+            块元素
+              之前
+                1.自上向下垂直排列
+                2.宽度默认为父元素的全部
+                3.高度被内容撑开
+              之后
+                1.块元素不再独占一行，自左向右水平排列
+                2.宽度和高度都被内容撑开
+
+            行内元素
+                设置浮动行内元素可以设置宽度和高度
+
+                总结：脱离文档流后，块元素不再独占一行，宽高被内容撑开，行内元素变成块元素（只是特点一样，不是真的变成块元素）
+                
+                    脱离文档流后，就不再需要区分行内元素和块元素
+
+                */
+    </style>
+</head>
+<body>
+    <div class="box1">wdwd</div>
+    <!-- <div class="box2"></div> -->
+     <span>我是span</span>
+</body>
+</html>

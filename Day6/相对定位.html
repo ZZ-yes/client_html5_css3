@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        position  用来设置元素的定位方式
+            可选值
+                - static 默认值，元素没有开启定位
+                - relative 相对定位
+                - absolute 绝对定位
+                - fixed 固定定位
+                - sticky 粘滞定位
+            相对定位
+                - 将元素的position属性设置成relative则开启了元素的相对定位
+                相对定位的特点
+                    1.开启相对定位而不设置元素的偏移量，此时元素不会发生任何变化
+                    2.开启相对定位不会使得元素脱离文档流，不会改变元素的性质
+                    3.相对定位元素是参照于其原来的位置进行定位的
+                    4.相对定位会提升元素的层级（会盖住文档流的元素）
+
+                偏移量
+                    - 开启了定位的元素可以通过偏移量来设置元素的位置
+                    - 偏移量通常只用设置两个即可定位一个元素的位置
+                    偏移量有四个
+                        - top     元素上边距离定位位置上边的距离
+                        - bottom  元素下边距离定位位置下边的距离
+                        - left    元素左边距离定位位置左边的距离
+                        - right   元素右边距离定位位置右边的距离
+
+        */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: relative;/*开启元素的相对定位*/
+            top: 200px;
+            left: 200px;
+        }
+        .box3{
+
+            width: 200px;
+            height: 200px;
+            background-color: #dfa;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        定位（position）
+            - 通过定位可以将元素摆放到页面中的任何位置
+            - css中一共有4种定位
+                1.相对定位
+                2.绝对定位
+                3.固定定位
+                4.粘滞定位
+    
+
+    -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

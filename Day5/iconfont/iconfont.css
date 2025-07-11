@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4971316 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1752114619656') format('woff2'),
+       url('iconfont.woff?t=1752114619656') format('woff'),
+       url('iconfont.ttf?t=1752114619656') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-accusoft:before {
+  content: "\e601";
+}
+
+.icon-android:before {
+  content: "\e605";
+}
+
+.icon-amazon-pay:before {
+  content: "\e606";
+}
+
+.icon-angellist:before {
+  content: "\e607";
+}
+
+.icon-app-store:before {
+  content: "\e62b";
+}
+
+.icon-block:before {
+  content: "\e62c";
+}
+
+.icon-calendar:before {
+  content: "\e62d";
+}
+
+.icon-close-circle:before {
+  content: "\e62e";
+}
+
+.icon-close-square:before {
+  content: "\e62f";
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 10px solid red;
+            /* overflow: hidden; */
+           
+        }
+        .box2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: #333;
+        }
+        /* 
+            在文档流中的元素，可以将其他元素的高度撑开
+                当元素浮动，他会脱离文档流，脱离后无法撑开父元素的高度，就导致父元素高度塌陷
+                父元素高度塌陷后，其后的元素会自动上移，导致布局变得混乱
+
+                高度塌陷是使用浮动时必须要解决的问题！！！
+
+                解决方法：
+                    1.直接将父元素的高度写死
+                        - 问题：无法根据子元素的高度变化
+                    2.BFC（Block Formatting Context）块级格式化环境
+                     网址：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_formatting_context
+                     可以将BFC理解为一个隐藏的属性，当开启BFC后元素会具备如下的特征：
+                        1.子元素的垂直外边距不会传递给父元素
+                        2.元素不会被浮动元素所覆盖
+                        3.元素可以包含浮动的子元素
+
+                        如何开启BFC
+                            - 需要用其他的样式来间接开启BFC
+                            例如:
+                                1. 浮动会开启元素的BFC（会有副作用，使得其他元素也浮动了）
+                                2. 将overflow设置为一个非visible的值
+                                3.display: flow-root 最佳方式，但不支持IE浏览器
+                                4.根元素自带BFC ，表示我们整个网页其实就是在一个BFC中 
+        */
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

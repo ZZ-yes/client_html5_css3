@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 10px solid red;
+        }
+        .box2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        /* 解决高度塌陷 */
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .box3{
+            height: 400px;
+            width: 400px;
+            background-color: aqua;
+        }
+        .box4{
+            height: 300px;
+            width: 300px;
+            background-color: blue;
+            margin-top: 100px;
+
+        }
+        /*解决外边距折叠*/
+        .clearfix::before{
+            content: "";
+            display: table;
+        }
+
+        /*既能解决外边距折叠也能解决高度塌陷*/
+        .clearfix::after,
+        .clearfix::before{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+    <!-- <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div> -->
+</body>
+</html>

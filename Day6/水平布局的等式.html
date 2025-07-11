@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 500px;
+            border: 10px red solid;
+
+        }
+        .box2{
+            width: 200px;
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: aqua;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        /*
+            子元素会在父元素内容区中排列
+                在文档流中，块元素的水平排列必须要遵循如下一个等式：
+                    包含块内容区的宽度 = 子元素可见框宽度 + 子元素的水平外边距
+                                        margin-left＋可见框＋margin-right
+                                        100 + 200 + 100 = 800 此时右外边距会自动调整为500
+                                        500 + 100 +　100 = 800 此时右外边距会自动调整为-200
+                                        100 + auto + 100 = 800 宽度为auto，此时auto为600
+                                        auto + 200 + auto =800
+                                        auto + auto + 200 = 800
+                        - 当属性值中没有auto，此时浏览器会自动调整右外边距已使等式强制满足
+                        - 当属性值为auto，则浏览器会自动调整该值以使等式满足
+                        - 当左右外边距为auto，而width有值，则左右外边距会设置相等的值以使等式满足
+                        - 当外边距和width同时设置为auto，则外边距的auto为0
+
+                    在文档流中，块元素的垂直排列，不需要遵循等式
+                        
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
