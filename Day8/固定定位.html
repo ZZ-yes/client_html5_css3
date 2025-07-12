@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* 
-            绝对定位
-                - 将元素的position设置成absolute，则开启了元素的绝对定位
-                特点：
-                    1.开启绝对定位后，如果不设置偏移量，元素的位置不会发生变化
-
-
-
-
-        */
-        .box1{
+        body{
+            height: 2000px;
+        }
+         .box1{
             width: 200px;
             height: 200px;
             background-color: red;
@@ -25,15 +18,23 @@
             width: 200px;
             height: 200px;
             background-color: #bfa;
-            position: absolute;
+            position: fixed;
+            right: 0;
+            bottom: 0;
         }
         .box3{
 
             width: 200px;
             height: 200px;
-            background-color: #dfa;
+            background-color: rgb(170, 198, 255);
         }
+        /* 
+            固定定位 position：fixed
+                固定定位也是一种绝对定位，所以他的大部分特点和绝对定位相同
+                    不同点在于固定定位总是参照于浏览器的窗口进行定位
+                    一旦定位，不会随窗口进行滚动
 
+        */
     </style>
 </head>
 <body>
