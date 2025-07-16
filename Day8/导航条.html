@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<style>
+    body {
+        font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+        background-color: #bfa;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        /*继承祖先样式*/
+    }
+
+    .outer {
+        min-width: 1190px;
+        /*最小宽度*/
+        height: 30px;
+        background-color: #e3e4e5;
+        border-bottom: 1px #ddd solid;
+    }
+
+    .menu {
+        width: 1190px;
+        height: 30px;
+        margin: 0 auto;
+        line-height: 30px;
+        color: #999;
+
+    }
+
+    /* 设置左侧菜单 */
+    .city {
+        float: left;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .city i {
+        color: #f10215;
+        /*设置地址图标颜色*/
+        font-size: 14px;
+    }
+
+    .city .current {
+        position: relative;
+        padding: 0 7px;
+        border: 1px solid transparent;
+        border-bottom: none;
+        z-index: 99999;/*设置高层级盖住下拉框的上边距*/
+    }
+    .city:hover .current{
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    .city .current span:hover{
+        color: #f10215;
+    }
+
+    /* 设置下拉层的样式 */
+    .city .select {
+        position: absolute;
+        width: 300px;
+        height: 416px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        top:30px;/*让下拉框的上边框与menu的下边框重叠*/
+        background-color: #fff;
+        display: none;
+        z-index: 9999;/*避免后面被其他元素盖住*/
+    }
+    .city:hover .select{
+        display: block;
+
+    }
+
+    /* 设置右侧菜单 */
+    .info {
+        float: right;
+    }
+
+    .info>li,
+    .info .line {
+        float: left;
+    }
+
+    /* 设置小竖线 */
+    .info .line {
+        width: 1px;
+        height: 10px;
+        margin: 10px 0;
+        border-left: 1px solid #ccc;
+    }
+
+    .info>li {
+        padding: 0 7px;
+    }
+
+    .info a:hover,
+    .info li>div:hover,
+    .info .hot {
+        color: #f10215;
+    }
+</style>
+
+<body>
+    <!-- 外部容器 -->
+    <div class="outer">
+        <!-- 内部容器 -->
+        <div class="menu">
+            <!-- 左侧菜单 -->
+            <div class="city">
+                <div class="current">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <span>北京</span>
+                </div>
+                <!-- 添加一个下拉层 -->
+                <div class="select">
+
+                </div>
+            </div>
+            <!-- 右侧菜单 -->
+            <ul class="info">
+                <li>
+                    <a href="#">您好，请登录</a>
+                </li>
+                <li>
+                    <a class="hot" href="#">免费注册</a>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <a href="#">我的订单</a>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <a href="#">我的京东</a>
+                    <i class="fa-solid fa-angle-down"></i>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <a class="hot" href="#">企业采购</a>
+                    <i class="fa-solid fa-angle-down"></i>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <span>商家服务</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <span>网站导航</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <div>
+                        <span>手机京东</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li>
+                    <a href="#">网站无障碍</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

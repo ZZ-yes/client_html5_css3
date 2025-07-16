@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    .outer{
+        font-size: 20px;
+        position: relative;/*包含块*/
+
+    }
+    .title{
+        width: 120px;
+        border: 2px solid red;
+        background-color: #bfa;
+        
+    }
+     .content{
+        position: absolute;/*脱离文档流不会挤到别的元素*/
+        width: 200px;
+        height: 200px;
+        background-color: rgb(51, 240, 4);
+        border: 2px solid red;  
+        display: none;
+    }
+    /*鼠标移入后显示content
+    注意：这里hover不能给title，给title不能选中内容*/
+    .outer:hover .content{
+        display: block;
+    }
+
+</style>
+<body>
+    <div class="outer">
+        <div class="title">
+            下拉框标题
+        </div>
+        <div class="content">
+            下拉框内容
+        </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fuga molestias pariatur sint ducimus aliquam commodi labore quod. Beatae recusandae eum laboriosam at impedit debitis minus odit ut error assumenda!
+    </div>
+</body>
+</html>

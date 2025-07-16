@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 引入fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<style>
+    img{
+        vertical-align: top;/*去除图片下边的白边*/
+    }
+    .banner{
+        width: 590px;
+        height: 470px;
+margin: 100px auto;
+        position: relative;/*作为图片包含块*/
+    }
+    .img_list>li{
+        position: absolute;/*开启绝对定位*/
+    }
+    .img_list>li:nth-child(1){
+        z-index: 1;
+    }
+    /* 设置左右箭头 */
+    .prev,.next{
+        box-sizing: border-box;
+        width: 25px;
+        height: 35px;
+        background-color: rgba(0, 0, 0, .15);
+        color: rgba(255,255,255,.8);
+        position: absolute;
+        z-index: 999;/*把箭头设置在最外层*/
+        top: 0;
+        bottom: 0;
+        margin: auto 0;/*垂直居中*/
+        line-height: 35px;
+        font-size: 16px;
+        cursor: pointer;/*设置鼠标形状*/
+    }
+    .next{
+        right: 0;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        padding-left: 12px;
+    }
+    .prev{
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+        padding-left: 6px;
+    }
+    .prev:hover,.next:hover{
+        background-color: rgba(0,0,0,.5);
+    }
+    /* 设置导航点 */
+    .slider{
+        z-index: 999;
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+    }
+    .slider>li{
+        float: left;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255,255,255,.4);
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .5);
+        margin-right: 8px;
+    
+    }
+    .slider>li:hover,
+    .slider>li.active{
+        outline: 3px solid rgba(255,255,255,.2);
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <!-- 轮播图最外层容器 -->
+    <div class="banner">
+        <!-- 图片的容器 -->
+        <ul class="img_list">
+            <li>
+                <a href="#">
+                    <img src="imgs/1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/2.avif" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/3.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/4.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/5.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/6.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/7.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="imgs/8.jpg" alt="">
+                </a>
+            </li>
+            
+        </ul>
+        <!-- 左右翻页 -->
+        <div class="prev-next">
+            <div class="prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="next">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <!-- 导航小点 -->
+        <ul class="slider">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>
