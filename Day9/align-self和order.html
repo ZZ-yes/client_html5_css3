@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul {
+            width: 800px;
+            height: 800px;
+            border: 10px solid #bfa;
+            display: flex;
+            align-items: stretch;
+        }
+
+        li {
+            width: 100px;
+            line-height: 100px;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+
+
+        }
+        /* 
+            align-self
+                弹性子元素的样式，用来单独设置某个弹性子元素的对齐方式
+            order 用来指定弹性子元素的位置
+        */
+        li:nth-child(1) {
+            /* align-self: end; */
+            order: 2;
+            background-color: aqua;
+
+        }
+
+        li:nth-child(2) {
+            order: 3;
+
+            background-color: rgb(17, 255, 0);
+        }
+
+        li:nth-child(3) {
+            order: 1;
+            background-color: rgb(255, 0, 157);
+        }
+
+        li:nth-child(4) {
+            order: 5;
+            background-color: rgb(0, 34, 255);
+        }
+
+        li:nth-child(5) {
+            order: 4;
+            background-color: rgb(2, 85, 85);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+</body>
+
+</html>

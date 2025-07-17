@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            background-clip 设置背景图片显示区域
+                可选值
+                    - border-box 默认值，背景会延伸到边框的下边
+                    - padding-box 背景会延伸到内边距下
+                    - content-box 背景只在内容区显示
+            background-origin 设置背景图片定位的原点
+                可选值
+                    - padding-box 默认值，背景相对于padding定位
+                    - border-box 背景相对于边框定位
+                    - content-box 背景相对于内容区定位
+            background-image:linear-gradient(度数，颜色1，颜色2……) 一个函数，线性渐变
+            background-image:radial-gradient(circle at center, red 0, blue, green 100%);
+            在容器中心的渐变，从红色开始，变成蓝色，最后变成绿色       径向渐变
+        
+        */
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 10px red double;
+            padding: 20px;
+            /* background: #bfa url("images/1.jpeg")no-repeat 0 0/cover padding-box border-box; */
+            /* background-clip: border-box; */
+            /* background-position: 0 0;
+            background-origin: padding-box; */
+            /* background-image:linear-gradient(0deg,blue,yellow,red) ; */
+            background-image: radial-gradient(circle at center, red 0, blue, green 100%);/* 在容器中心的渐变，从红色开始，变成蓝色，最后变成绿色 */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+               background-color 背景颜色
+               background-image 背景图片
+               background-repeat 背景的重复方式
+                        可选值
+                            - repeat 默认值，背景图片会沿元素的水平和垂直双方向重复
+                            - repeat-x 水平方向重复
+                            - repeat-y 垂直方向重复
+                            - no-repeat 不重复
+                            - space 背景图片充满元素，无法完整充满的使用空格隔开
+                            - round 背景图片自动缩放以充满元素
+               background-position 设置背景图片的位置
+                        可选值
+                            - top left right bottom center 
+                            任选两个值设置，如果只写了一个值，第二个默认为center
+                background-position:水平偏移量 垂直偏移量
+                    水平偏移量值越大，背景图片越右移，可以设置负值
+                    垂直偏移量值越大，背景图片越下移，可以设置负值
+
+
+            */
+            width: 800px;
+            height: 800px;
+            background-color: #bfa;
+            background-image: url("../Day8/imgs/1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+        .box2{
+            width: 100px;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+
+        </div>
+    </div>
+</body>
+</html>
