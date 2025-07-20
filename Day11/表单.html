@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单（form）
+            - 在网页中通过表单将信息提交给服务器 
+        使用form标签来创建一个表单
+        action用来指定表单要提交到哪里
+        文本框：input type=text，如果希望表单中的数据真的被提交给服务器，必须为表单指定name属性
+        提交按钮：input type=submit，可以通过value属性来修改按钮上的文字
+        密码：input type=password，默认情况下，表单中的数据会通过url地址发送，url地址后的？被称为查询字符串（query string）
+                ?hello=1&password=12，查询字符串是一个个名值对结构，一个数据名对应一个值，多个名值对之间使用&隔开，
+                    数据发送给服务器后，服务器可以根据数据名获取对应的值
+        单选框：input type=radio，单选框是根据name属性来分组的，相同name属性为一组，像这种选择框，不需要用户填写内容，还必须为表单项指定value属性，value最终会成为提交给服务器的值
+        多选框：input type="checkbox" name="" value=""
+        下拉框：使用select，option来创建下拉列表，添加multiple属性后可以将下拉列表设置为多选的下拉框
+        重置按钮：input type="reset"
+        普通按钮：input type="buttom" 只能被点，但是我们可以通过js为其添加功能
+
+         <label for="username">用户名</label>
+            <input type="text" name="hello" placeholder="请输入用户名" value="admin" id="username"> label和input关联起来，点击用户名就能直接点到文本框
+    
+    -->
+    <form action="target.html">
+        <!-- 表单项 -->
+        <div>
+            用户名：<input type="text" name="hello">
+        </div>
+        <div>
+            <!-- 密码： <input type="password" name="password"> -->
+            性别：<input type="radio" name="gender" value="男"> 男
+            <input type="radio" name="gender" value="女"> 女
+            <div>
+                爱好：
+                <input type="checkbox" name="hobby" value="lq" >篮球
+                <input type="checkbox" name="hobby" value="ymq" >羽毛球 
+                <input type="checkbox" name="hobby" value="zq ">足球
+            </div>
+            <div>
+                你选：
+                <select name="choose" multiple>
+                    <option value="ymq">羽毛球</option>
+                    <option value="ppq">乒乓球</option>
+                </select>
+            </div>
+
+        </div>
+        <div>
+            <input type="submit" value="登录">
+        </div>
+
+    </form>
+</body>
+
+</html>

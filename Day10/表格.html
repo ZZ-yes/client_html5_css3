@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            /*边框合并*/
+        }
+
+        th,td {
+            border: 1px solid #000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    
+        表格（table）
+            - 和日常生活中的一样，在网页中也可以创建表格
+            - 可以通过表格来表示一些格式化的数据
+
+            使用table来创建一个表格
+    colspan 横向合并单元格
+    rowspan 纵向合并单元格
+
+    
+    -->
+    <table>
+        <caption>学生列表</caption>
+        <!-- 表格头部 -->
+        <thead>
+            <!-- tr表示一行
+                 td表示一个单元格
+                 th表示表头中的单元格
+                 caption 表格标题
+             -->
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>住址</th>
+            </tr>
+        </thead>
+        <!-- 表格主体 -->
+        <tbody>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>住址</td>
+            </tr>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>住址</td>
+            </tr>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>住址</td>
+            </tr>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>住址</td>
+            </tr>
+
+        </tbody>
+        <!-- 表格底部 -->
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td>合计：</td>
+                <td>4个</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
