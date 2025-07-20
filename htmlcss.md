@@ -2077,19 +2077,185 @@ background-size 设置背景图片的尺寸
 
 ​        简写属性时background-size在偏移量后边加个/写
 
+#### 表格（table）
+
+​      \- 和日常生活中的一样，在网页中也可以创建表格
+
+​      \- 可以通过表格来表示一些格式化的数据
 
 
 
+​      使用table来创建一个表格
+
+如果在table中没有写tbody，则浏览器会自动创建tbody，并将所有的tr都放入tbody中
+
+  colspan 横向合并单元格
+
+  rowspan 纵向合并单元格
+
+<table>
+
+<!-- 表格头部 -->
+
+​    <thead>
+
+​		tr表示一行
+
+​         td表示一个单元格
+
+​         th表示表头中的单元格
+
+​         caption 表格标题
+
+</thead>
+
+​    <!-- 表格主体 -->
+
+​    <tbody>
+
+</tbody>
+
+​    <!-- 表格底部 -->
+
+​    <tfoot>
+
+</tfoot>
+
+</table>
+
+#### 表格对齐方式
+
+td设置：
+
+​	text-align: center;
+
+​      /* 文字在td中会自动垂直居中 */
+
+​      vertical-align: middle;
+
+### Day11
+
+#### 表单
+
+表单（form）
+
+​      \- 在网页中通过表单将信息提交给服务器 
+
+​    使用form标签来创建一个表单
+
+​    action用来指定表单要提交到哪里
+
+​    文本框：input type=text，如果希望表单中的数据真的被提交给服务器，必须为表单指定name属性
+
+​    提交按钮：input type=submit，可以通过value属性来修改按钮上的文字
+
+​    密码：input type=password，默认情况下，表单中的数据会通过url地址发送，url地址后的？被称为查询字符串（query string）
+
+​        ?hello=1&password=12，查询字符串是一个个名值对结构，一个数据名对应一个值，多个名值对之间使用&隔开，
+
+​          数据发送给服务器后，服务器可以根据数据名获取对应的值
+
+​    单选框：input type=radio，单选框是根据name属性来分组的，相同name属性为一组，像这种选择框，不需要用户填写内容，还必须为表单项指定value属性，value最终会成为提交给服务器的值
+
+​    多选框：input type="checkbox" name="" value=""
+
+​    下拉框：使用select，option来创建下拉列表，添加multiple属性后可以将下拉列表设置为多选的下拉框
+
+​    重置按钮：input type="reset"
+
+​    普通按钮：input type="buttom" 只能被点，但是我们可以通过js为其添加功能
 
 
 
+​     <label for="username">用户名</label>
 
+​      <input type="text" name="hello" placeholder="请输入用户名" value="admin" id="username"> label和input关联起来，点击用户名就能直接点到文本框
 
+#### 表单属性
 
+​	placeholder 用来设置文本框的占位符
 
+​    value 文本框中可以通过value来指定默认值
 
+​    disabled 禁用表单项，不会被提交
 
+​    readonly 只读，表单项无法修改，但是可以提交
 
+​    checked 默认选中的单选和多选
+
+​    selected 默认选中的下拉项
+
+#### 居中总结
+
+1.利用盒子模型margin：0 auto来实现水平居中
+
+​        \- 原理：利用盒子模型水平布局的等式
+
+​          左右外边距+可见框宽度=包含块的宽度
+
+​        \- 缺点：1.不能实现垂直居中
+
+​            2.居中的元素必须指定宽度
+
+​      2.利用定位
+
+​        position: absolute;
+
+​        top: 0;
+
+​        bottom: 0;
+
+​        right: 0;
+
+​        left: 0;
+
+​        margin: auto;
+
+​      \- 原理：利用定位后新的等式来实现居中
+
+​        左右偏移量+左右外边距+可见框宽度=包含块宽度
+
+​        上下偏移量+上下外边距+可见框高度=包含块高度
+
+​      \- 缺点：1.设置的样式多一些
+
+​          2.居中的元素必须指定宽度
+
+​      3.使用表格
+
+​        父元素的设置
+
+​          display: table-cell;
+
+​          vertical-align: middle;
+
+​        子元素的设置
+
+​          margin：0 auto
+
+​      或者
+
+​        子元素的设置
+
+​          display: inline-block
+
+​        父元素的设置
+
+​           text-align: center
+
+​      \- 缺点：父元素设置为单元格后，默认宽度被内容撑开
+
+​      4.利用弹性盒
+
+​        父元素的设置
+
+​          display: flex;
+
+​          align-items: center;
+
+​          justify-content: center;
+
+​        \- 缺点几乎没有
 
 
 
