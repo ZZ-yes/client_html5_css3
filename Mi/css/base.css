@@ -1,0 +1,25 @@
+/* 基本样式表 */
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.w{
+    width: 1226px;
+    margin: 0 auto;
+}
+.clearfix::after,
+.clearfix::before{
+    content: "";
+    display: table;
+    clear: both;
+}
+img{
+    width: 100%;
+    vertical-align: middle;
+}

@@ -1,0 +1,245 @@
+/* 导航条样式 */
+.nav_top {
+    font-size: 12px;
+    color: #b0b0b0;
+    background-color: #333;
+}
+
+.site_top {
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link_wrap {
+    display: flex;
+}
+
+.nav_top .sep {
+    margin: 0 .6em;
+    color: #424242;
+}
+
+.link_wrap>a:hover {
+    color: #fff;
+}
+
+.user_info {
+    display: flex;
+    /*让cart设置生效*/
+}
+
+.cart {
+    width: 120px;
+    margin-left: 15px;
+    background-color: #424242;
+    text-align: center;
+}
+
+.user_info .cart:hover {
+    color: #ff6700;
+    background-color: #fff;
+}
+
+/* 设置下拉框二维码 */
+.download {
+    position: relative;
+}
+
+.download .hide {
+    /* display: none; */
+    position: absolute;
+    z-index: 9999;
+    /* height: 148px; */
+    height: 0;
+    color: #333;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    /* left: -36px; */
+    left: 50%;
+    margin-left: -62px;
+    transition: height .3s;
+}
+
+.download .hide .inner {
+    width: 124px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.download:hover .hide {
+    /* display: flex; */
+    height: 148px;
+}
+
+.download:hover .hide::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    margin: 0 auto;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+
+}
+
+.download .hide img {
+    width: 90px;
+    margin-top: 18px;
+}
+
+/* 头部样式 */
+.top_header .w {
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.top_header .logo a {
+    display: block;
+    width: 56px;
+    height: 56px;
+    font-size: 0;
+    margin-right: 30px;
+    background: url("../images/logo-mi2.png") no-repeat;
+    background-size: 56px;
+    background-position: center;
+}
+
+.top_header .logo a:active {
+    background-size: 50px;
+}
+
+/* 中间菜单 */
+.top_header .menu {
+    display: flex;
+    font-size: 16px;
+}
+
+.top_header .menu li>a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 10px;
+}
+
+.top_header .menu li>a:hover {
+    color: #ff6700;
+}
+
+.top_header a.category {
+    padding-left: 40px;
+    visibility: hidden;
+}
+
+/* 搜索框 */
+.top_header .search {
+    position: relative;
+    display: flex;
+    flex: auto;
+    justify-content: end;
+}
+
+.search input {
+    box-sizing: border-box;
+    width: 244px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    outline: none;
+    padding: 0 6px;
+    font-size: 14px;
+}
+
+.search button {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #ff6700;
+    color: #fff;
+    border: none;
+}
+
+.search input:hover,
+.search input:hover+button {
+    border-color: #cbcaca;
+}
+
+.search input:focus,
+.search input:focus+button {
+    border-color: #ff6700;
+}
+
+.search input:focus~.hide {
+    display: block;
+}
+
+.search .hide {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    right: 49px;
+    width: 245px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #ff6700;
+    border-top: none;
+}
+/* 商品分类左侧导航 */
+.left_nav{
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    width: 234px;
+    height: 440px;
+    padding: 10px 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(105,101,101,.6);
+    font-size: 14px;
+}
+.left_nav a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: auto;
+    color: #fff;
+    padding: 0 30px;
+}
+.left_nav a:hover{
+    background-color: #ff6700;
+}
+.left_nav a::after{
+    content: "\f105";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+/* 中间轮播图 */
+.banner{
+    height: 460px;
+    position: relative;
+}
+.banner .img_list li{
+    position: absolute;
+}
+.banner .prev_next a{
+    position: absolute;
+}
