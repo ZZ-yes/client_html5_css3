@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 200px auto;
+            transition: all 3s;
+            
+            /* 
+                scaleX X轴缩放
+                scaleY y轴缩放
+                scaleZ z轴缩放
+                scale x y轴缩放
+                
+            */
+            
+        }
+        .box1:hover{
+            transform: scale(.2);
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <div class="box1"></div>
+</body>
+</html>

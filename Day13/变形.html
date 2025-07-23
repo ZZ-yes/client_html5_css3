@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /* 水平垂直居中 */
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: aqua;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(93, 0, 255);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        通过变形可以对元素的位置、大小、角度等进行修改
+            transform用来设置变形
+                - 需要通过不同的变形函数来实现元素的变形
+                - 当我们对元素进行变形时，只会影响到元素自身，不会影响到其他元素的位置
+            translateX() x轴平移
+            translateY() y轴平移
+                设置平移时，如果使用百分百单位，百分百是相对于元素自身大小计算
+    -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

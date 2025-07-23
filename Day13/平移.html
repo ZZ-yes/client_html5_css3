@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /*  
+                perspective 用来设置透视的效果
+                    需要一个长度作为值，长度表示人眼与屏幕的距离
+            
+            */
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 200px auto;
+            transition: all 3s;
+            /* 
+                translateZ 用来设置Z轴平移
+                    - z轴平移视觉上会感到元素大小的变化
+            */
+            
+        }
+        .box1:hover{
+                /* transform: translateX(100px) translateY(100px) translateZ(500px); */
+                /* transform: translate(100px,100px); */
+                transform: translate3d(100px,100px,500px);
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <div class="box1"></div>
+</body>
+</html>

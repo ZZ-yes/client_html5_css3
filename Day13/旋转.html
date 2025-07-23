@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 200px auto;
+            transition: all 3s;
+            /* transform-origin: 0 0; */
+            transform-origin: top center;
+            /* 
+                rotateX 沿X轴旋转
+                rotateY 沿Y轴旋转
+                rotateZ 沿Z轴旋转
+                    单位：
+                        - deg 度数
+                        - turn 圈
+                transform-origin 指定变形的原点
+            */
+            
+        }
+        .box1:hover{
+            /* transform: rotateX(10turn) rotateY(10turn) rotateZ(10turn); */
+            /* transform: translateX(100px) rotateZ(45deg);
+            transform:  rotateZ(45deg) translateX(100px); */
+            transform:  rotateZ(2turn) ;
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <div class="box1"></div>
+</body>
+</html>

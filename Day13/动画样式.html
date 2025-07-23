@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            animation-name: move;
+            animation-duration: 5s;
+            /* animation-iteration-count: infinite; */
+            animation-delay: 5s;
+            /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+            /* animation-timing-function: steps(2);时间函数 */
+            /* animation-direction: alternate-reverse; */
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+        /* 
+             animation-direction  动画的方向
+                        可选值
+                            - normal 默认值
+                            - reverse 反向执行
+                            - alternate 正向反向交替执行
+                            - alternate-reverse 先反向再正向
+            animation-fill-mode 动画的填充模式
+                        可选值
+                            - none 默认值 延迟时元素保持不变，动画执行结束时恢复原状
+                            - forwards 延迟时元素保持不变，动画执行结束时保持to状态
+                            - backwards 延迟时元素变为from状态，动画执行结束恢复原状
+                            - both 延迟时元素变为from状态，动画执行结束保持to状态
+            animation-play-state 动画的播放状态
+                        可选值
+                            - paused 暂停
+                            - running 运行
+
+            animation 简写属性
+        */
+        
+        @keyframes move{
+            from{
+                margin-left: 0;
+                background-color: green;
+            }
+            to{
+                margin-left: 300px;
+                background-color: red;
+            }
+        }
+        .box1:hover{
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

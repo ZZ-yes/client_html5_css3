@@ -2257,13 +2257,276 @@ td设置：
 
 ​        \- 缺点几乎没有
 
+### Day12
 
+#### 隐藏元素
 
+​	 1.不设置宽高 
 
+​      2.display：none 不会占据位置
 
- 
+​      3.visibility：hidden 会占据位置
 
+​      4.opacity：0 会占据位置
 
+### Day13
+
+#### 变形
+
+通过变形可以对元素的位置、大小、角度等进行修改
+
+​      transform用来设置变形
+
+​        \- 需要通过不同的变形函数来实现元素的变形
+
+​        \- 当我们对元素进行变形时，只会影响到元素自身，不会影响到其他元素的位置
+
+​      translateX() x轴平移
+
+​      translateY() y轴平移
+
+​        设置平移时，如果使用百分百单位，百分百是相对于元素自身大小计算
+
+#### 平移
+
+​		transform: translateX(100px) translateY(100px) translateZ(500px);
+
+​        transform: translate(100px,100px);
+
+​        transform: translate3d(100px,100px,500px);
+
+translateZ 用来设置Z轴平移
+
+​          \- z轴平移视觉上会感到元素大小的变化
+
+perspective 用来设置透视的效果
+
+​          需要一个长度作为值，长度表示人眼与屏幕的距离
+
+translateX  z轴平移
+
+translateY y轴平移
+
+#### 旋转
+
+​	  transform: rotateX(10turn) rotateY(10turn) rotateZ(10turn);
+
+​      transform: translateX(100px) rotateZ(45deg);
+
+​      transform:  rotateZ(45deg) translateX(100px);
+
+​      transform:  rotateZ(2turn) ;
+
+​		rotateX 沿X轴旋转
+
+​        rotateY 沿Y轴旋转
+
+​        rotateZ 沿Z轴旋转
+
+​          单位：
+
+​            \- deg 度数
+
+​            \- turn 圈
+
+​        transform-origin 指定变形的原点
+
+​        transform-origin: top center;  上边中间位置
+
+#### 缩放
+
+​		scaleX X轴缩放
+
+​        scaleY y轴缩放
+
+​        scaleZ z轴缩放
+
+​        scale x y轴缩放
+
+​		transform: scale(.2);
+
+####  过渡
+
+过渡（transition）
+
+​        \- 通过过渡可以使得元素样式发生变化时，一点点的变化
+
+​      transition-property 指定应用过渡属性的名称
+
+​        \- all 表示所以样式
+
+​      transition-duration 指定过渡动画所需的时间
+
+​        单位：秒和毫秒 1秒=1000毫秒
+
+​      transition-delay 在过渡效果开始作用之前需要等待的时间
+
+​      transition-timing-function 指定过渡的时间的曲线（每一次过渡都会执行）
+
+​          可选值
+
+​            \- ease 默认值，先加速再减速
+
+​            \- linear 匀速运动
+
+​            \- ease-in 加速运动
+
+​            \- ease-out 减速运动
+
+​            \- 贝塞尔曲线 自定义运动方式
+
+​            \- steps() 分步执行动画
+
+​      transition 过渡的简写属性
+
+​        \- 持续时间在前，延时在后，别的没要求
+
+#### 3d立方体
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            perspective: 800px;
+        }
+        ul{
+            list-style: none;
+        }
+        .cube{
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            position: relative;
+            /* 开启3d效果 */
+            transform-style:preserve-3d;
+            transition: all 10s;
+
+        }
+        .cube:hover{
+            transform: rotateX(1turn) rotateY(1turn);
+            transform: rotateY(45deg) scale(2);
+        }
+        .cube li{
+            width: 200px;
+            height: 200px;
+            opacity: .7;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+
+        }
+        .cube li:nth-child(1){
+            background-color: tomato;
+            transform: translateZ(100px);
+        }
+        .cube li:nth-child(2){
+            background-color: rgb(255, 203, 71);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .cube li:nth-child(3){
+            background-color: rgb(194, 255, 71);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .cube li:nth-child(4){
+            background-color: rgb(71, 255, 221);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .cube li:nth-child(5){
+            background-color: rgb(99, 71, 255);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .cube li:nth-child(6){
+            background-color: rgb(255, 117, 71);
+            transform: translateZ(-100px);
+        }
+    </style>
+</head>
+<body>
+    <ul class="cube">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
+```
+
+#### 动画
+
+通过@keyframes来定义关键帧
+
+​        from 表示动画的开始位置
+
+​        to 表示动画的结束位置
+
+```
+@keyframes move {
+            from {
+                margin-left: 0;
+            }
+
+            to {
+                margin-left: 500px;
+            }
+        }
+ move是动画名字，自定义的
+```
+
+​      animation-name 指定动画的名字
+
+​      animation-duration 指定一次动画执行的时间
+
+​      animation-iteration-count 指定动画执行的次数
+
+​            \- infinite 无限执行
+
+animation-direction  动画的方向
+
+​            可选值
+
+​              \- normal 默认值
+
+​              \- reverse 反向执行
+
+​              \- alternate 正向反向交替执行
+
+​              \- alternate-reverse 先反向再正向
+
+​      animation-fill-mode 动画的填充模式
+
+​            可选值
+
+​              \- none 默认值 延迟时元素保持不变，动画执行结束时恢复原状
+
+​              \- forwards 延迟时元素保持不变，动画执行结束时保持to状态
+
+​              \- backwards 延迟时元素变为from状态，动画执行结束恢复原状
+
+​              \- both 延迟时元素变为from状态，动画执行结束保持to状态
+
+​      animation-play-state 动画的播放状态
+
+​            可选值
+
+​              \- paused 暂停
+
+​              \- running 运行
+
+​      animation 简写属性，持续时间在前，延时在后，别的没要求
 
 
 

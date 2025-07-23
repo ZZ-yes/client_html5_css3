@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-top: 20px;
+            /* transition: width 3s; */
+            /* transition-property: width,background-color; */
+            transition-property: all;
+            transition-duration: 5s;
+            /* transition-delay: 3s; */
+            transition-timing-function: steps(5,start);
+            
+        }
+        body:hover .box1{
+            /* width: 500px;
+            background-color: #bf3737; */
+            margin-left: 600px;
+        }
+        body:hover .box2{
+            margin-left: 600px;
+        }
+        body:hover .box3{
+            margin-left: 600px;
+        }
+        body:hover .box4{
+            margin-left: 600px;
+        }
+        body:hover .box5{
+            margin-left: 600px;
+        }
+        body:hover .box6{
+            margin-left: 600px;
+        }
+        .box2{
+            background-color: aqua;
+            /* transition-timing-function: linear; */
+            transition-timing-function: steps(5,end); 
+        }
+        .box3{
+            background-color: rgb(50, 73, 205);
+            transition-timing-function: ease-in;
+        }
+        .box4{
+            background-color: rgb(50, 171, 205);
+            transition-timing-function: ease-out;
+        }
+        .box5{
+            background-color: rgb(205, 50, 187);
+            transition-timing-function: ease-in-out;
+        }
+        .box6{
+            background-color: rgb(205, 50, 63);
+            transition-timing-function: cubic-bezier(0.54, 1.34, 1.00, -0.32);
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+            过渡（transition）
+                - 通过过渡可以使得元素样式发生变化时，一点点的变化
+            transition-property 指定应用过渡属性的名称
+                - all 表示所以样式
+            transition-duration 指定过渡动画所需的时间
+                单位：秒和毫秒 1秒=1000毫秒
+            transition-delay 在过渡效果开始作用之前需要等待的时间
+            transition-timing-function 指定过渡的时间的曲线（每一次过渡都会执行）
+                    可选值
+                        - ease 默认值，先加速再减速
+                        - linear 匀速运动
+                        - ease-in 加速运动
+                        - ease-out 减速运动
+                        - 贝塞尔曲线 自定义运动方式
+                        - steps() 分步执行动画
+            transition 过渡的简写属性
+                - 持续时间在前，延时在后，别的没要求
+    -->
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+</body>
+</html>
