@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            border: 10px solid #333;
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px 200px; */
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            /* grid-template-columns: repeat(10,2fr 1fr); */
+            grid-template-rows: 200px 300px ;
+            
+
+        }
+        /* 
+            网格容器
+                - 要使用网格布局必须先设置网格容器
+                - 使用display: grid; 或display: inline-grid;
+                - 默认情况下，我们开启的是一个单列的网格布局
+            grid-template-columns 设置网格布局的列数（写几个就代表有几行）
+            grid-template-rows  设置网格布局的行数
+            repeat(10,2fr 1fr) 重复的设置 2fr和1fr重复10次，就是20
+            
+            网格项
+                - 网格容器的子元素都会自动的变为网格项
+            grid-column-start 网格列的起始位置
+            grid-column-end   网格列的结束位置
+            grid-row-start:   网格行的起始位置
+            grid-row-end: 3   网格列的结束位置
+        
+        */
+        .box1{
+            background-color: tomato;
+            grid-column-start: 2;
+            grid-column-end: span 2;/*占两份*/ 
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .box2{
+            background-color: rgb(16, 159, 169);
+        }
+        .box3{
+            background-color: aqua;
+        }
+        .box4{
+            background-color: blueviolet;
+        }
+        .box5{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+</body>
+</html>

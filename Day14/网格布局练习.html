@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 150px 200px 200px 150px;
+
+        }
+        .box1{
+            background-color: tomato;
+            grid-column-start: 1;
+            grid-column-end: -1; 
+        }
+        .box2{
+            background-color: rgb(16, 159, 169);
+            grid-row-start: 2;
+            grid-row-end: -2;
+        }
+        .box3{
+            background-color: aqua;
+            grid-column-start: 2;
+            grid-column-end: -1; 
+        }
+        .box4{
+            background-color: blueviolet;
+        }
+        .box5{
+            background-color: yellow;
+        }
+        .box6{
+            background-color: bisque;
+        }
+        .box7{
+            background-color: violet;
+            grid-column-start: 1;
+            grid-column-end: -1; 
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">头部</div>
+        <div class="box2">菜单</div>
+        <div class="box3">上半部分</div>
+        <div class="box4">图片</div>
+        <div class="box5">图片</div>
+        <div class="box6">图片</div>
+        <div class="box7">底部</div>
+    </div>
+</body>
+</html>

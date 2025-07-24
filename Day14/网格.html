@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            display: grid;
+
+            /* 
+                justify-items
+                    - 设置网格中元素水平方向的对齐方式
+                align-items
+                    - 设置网格中元素垂直方向的对齐方式
+            */
+            justify-items: center;
+            align-items: center;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

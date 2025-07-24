@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 150px 200px 200px 150px;
+            /* grid-column-gap: 20px;
+            grid-row-gap: 20px; */
+            grid-gap: 10px;
+
+        }
+        /* 可以通过z-index来调整网格项的层级
+        grid-column: 1/-1; 
+        - grid-column-start和grid-column-end
+        - 同时设置列开始和列结束
+
+        grid-row: 2/4;
+        - grid-row-start和grid-row-start
+        - 同时设置行开始和行结束
+
+        grid-area: 2/1/4/2;
+        - grid-row-start/grid-column-start/grid-row-end/grid-column-end
+        - 行开始/列开始/行结束/列结束
+        
+        grid-column-gap 列间距
+        grid-row-gap    行间距
+        简写：grid-gap:行间距 列间距
+        */
+        .box1{
+            background-color: tomato;
+             grid-column-start: 1;
+            grid-column-end: -1; 
+            /* grid-row-start: 1;  */
+            /* grid-column: 1/-1; */
+            
+        }
+        .box2{
+            background-color: rgb(16, 159, 169);
+            /* grid-row-start: 2;
+            grid-row-end: -2;
+            grid-column-start: 1; */
+            /* grid-row: 2/4; */
+            grid-area: 2/1/4/2;
+        }
+        .box3{
+            background-color: aqua;
+            grid-column-start: 2;
+            grid-column-end: -1; 
+        }
+        .box4{
+            background-color: blueviolet;
+        }
+        .box5{
+            background-color: yellow;
+        }
+        .box6{
+            background-color: bisque;
+        }
+        .box7{
+            background-color: violet;
+            grid-column-start: 1;
+            grid-column-end: -1; 
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">头部</div>
+        <div class="box2">菜单</div>
+        <div class="box3">上半部分</div>
+        <div class="box4">图片</div>
+        <div class="box5">图片</div>
+        <div class="box6">图片</div>
+        <div class="box7">底部</div>
+    </div>
+</body>
+</html>

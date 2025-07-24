@@ -2528,9 +2528,332 @@ animation-direction  动画的方向
 
 ​      animation 简写属性，持续时间在前，延时在后，别的没要求
 
+### Day14
+
+#### 布局回顾
+
+​	第一代 原始布局:表格布局
+
+​        缺点：1.不易于维护 2.对SEO搜索引擎不友好
+
+​    第二代 CSS 浮动
+
+​      
+
+​    第三代 flex布局
+
+​      \- 善于单行单列
+
+​      \- 多行多列布局时，需要使用不同的结构组合使用
+
+​      \- 结构复杂，样式简单
+
+​    第四代 网格布局（grid）
+
+​      \- 网格布局的方式和table类似
+
+​      \- 在网格布局，将网页分为了一行一行和一列一列
+
+​        通过这些行和列的设置帮助我们完成布局
+
+​      \- 网格布局比较适用于复杂的布局
+
+​      \- 相较于弹性盒，无需设置多余的结构
+
+​      \- 结构简单，样式复杂
+
+#### 精灵动画
 
 
 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 271px;
+            width: 132px;
+            background-image: url("images/bigtap-mitu-queue-big.png");
+            /* transition: background-position .3s steps(3); */
+            animation: walk 1s steps(4) infinite;
+            /* 设置steps()时，from不算第一步 */
+        }
+        /* .box1:hover{
+            background-position:-396px 0;
+        } */
+        @keyframes walk{
+            from{
+               background-position: 0;
+            }
+            
+            to{
+               background-position: -528px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
+```
+
+#### 钟表
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clock {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            border-radius: 50%;
+            background-image: url("images/bg3.jpg");
+            background-size: cover;
+        }
+
+        .hour {
+            position: absolute;
+            height: 40%;
+            width: 8px;
+            background-color: rgb(0, 0, 0);
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            margin: 0 auto;
+            transform: rotateZ(180deg);
+            transform-origin: bottom center;
+            animation: clock-run 43200s linear infinite;
+        }
+
+        .min {
+            position: absolute;
+            height: 45%;
+            width: 6px;
+            background-color: rgb(1, 1, 1);
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            margin: 0 auto;
+            transform: rotateZ(90deg);
+            transform-origin: bottom center;
+            animation: clock-run 3600s linear infinite;
+        }
+
+        .second {
+            position: absolute;
+            height: 48%;
+            width: 4px;
+            background-color: red;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform: rotateZ(45deg);
+            transform-origin: bottom center;
+            animation: clock-run 60s steps(60) infinite;
+        }
+
+        /* 设置关键帧 */
+        @keyframes clock-run {
+            from {
+                transform: rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="second"></div>
+    </div>
+</body>
+
+</html>
+```
 
 
+
+#### 网格
+
+网格容器
+
+​        \- 要使用网格布局必须先设置网格容器
+
+​        \- 使用display: grid; 或display: inline-grid;
+
+​        \- 默认情况下，我们开启的是一个单列的网格布局
+
+​      grid-template-columns 设置网格布局的列数（写几个就代表有几行）
+
+​      grid-template-rows  设置网格布局的行数
+
+​      repeat(10,2fr 1fr) 重复的设置 2fr和1fr重复10次，就是20
+
+​      justify-items
+
+​          \- 设置网格中元素水平方向的对齐方式
+
+​        align-items
+
+​          \- 设置网格中元素垂直方向的对齐方式
+
+​      网格项
+
+​        \- 网格容器的子元素都会自动的变为网格项
+
+​      grid-column-start 网格列的起始位置
+
+​      grid-column-end  网格列的结束位置
+
+​      grid-row-start:  网格行的起始位置
+
+​      grid-row-end: 3  网格列的结束位置
+
+grid-column-end: span 2;/*占两份*/ 
+
+可以通过z-index来调整网格项的层级
+
+​    grid-column: 1/-1; 
+
+​    \- grid-column-start和grid-column-end
+
+​    \- 同时设置列开始和列结束
+
+
+
+​    grid-row: 2/4;
+
+​    \- grid-row-start和grid-row-start
+
+​    \- 同时设置行开始和行结束
+
+
+
+​    grid-area: 2/1/4/2;
+
+​    \- grid-row-start/grid-column-start/grid-row-end/grid-column-end
+
+​    \- 行开始/列开始/行结束/列结束
+
+​    
+
+​    grid-column-gap 列间距
+
+​    grid-row-gap   行间距
+
+​    简写：grid-gap:行间距 列间距
+
+### Day15
+
+#### 网格布局
+
+​		justify-items align-items 网格项在轨道中的对齐方式
+
+
+
+​        justify-self align-self 单独设置某一个网格项在轨道中的对齐方式
+
+​        justify-content align-content 设置网格项整体对齐方式
+
+#### 网格线命名
+
+```
+.outer{
+            display: grid;
+            border: 3px solid orange;
+            grid-gap: 10px;
+            grid-template-columns: [a] 200px [b] 200px [c] 200px;
+            grid-template-rows: [head-row-start]200px [head-row-end side-row-start]200px [side-row-end]200px;
+        }
+        /* 
+            可以为网格线命名
+        
+        */
+        .outer div{
+            border: 3px solid red;
+        }
+        .box1{
+            grid-column: a/c;
+            grid-row:head-row-start/ side-row-end;
+        }
+```
+
+#### 命名区域布局
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            display: grid;
+            border: 3px solid orange;
+            grid-gap: 10px;
+            grid-template-columns: 200px 200px 200px 200px ;
+            grid-template-rows: 100px 200px 200px 100px;
+            grid-template-areas:
+                "top top top top"
+                "side main main main"
+                "side main main main"
+                "bottom bottom bottom ."
+            
+            ;
+        }
+        /* 
+            grid-template-areas 可以设置命名的区域如何在容器中排布
+        */
+        .outer div{
+            border: 3px solid red;
+        }
+        .box1{
+            /* grid-column:1/-1; */
+            grid-area: top;
+        }
+        .box2{
+            grid-area: side;
+        }
+        .box3{
+            grid-area: main;
+        }
+        .box4{
+            /* grid-column:1/-1; */
+            grid-area: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">头部</div>
+        <div class="box2">侧边栏</div>
+        <div class="box3">主要内容</div>
+        <div class="box4">底部</div>
+    </div>
+</body>
+</html>
+```
 

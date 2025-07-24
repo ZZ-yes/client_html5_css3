@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 第一代 原始布局:表格布局
+                缺点：1.不易于维护 2.对SEO搜索引擎不友好
+        第二代 CSS 浮动
+            
+        第三代 flex布局
+            - 善于单行单列
+            - 多行多列布局时，需要使用不同的结构组合使用
+            - 结构复杂，样式简单
+        第四代 网格布局（grid）
+            - 网格布局的方式和table类似
+            - 在网格布局，将网页分为了一行一行和一列一列
+                通过这些行和列的设置帮助我们完成布局
+            - 网格布局比较适用于复杂的布局
+            - 相较于弹性盒，无需设置多余的结构
+            - 结构简单，样式复杂
+        
+
+    -->
+    <table border="1" width="800">
+        <tr>
+            <td colspan="2" height="100">
+                头部
+            </td>
+        </tr>
+        <tr>
+            <td height="400" width="150">菜单</td>
+            <td>
+                <table width="100%" border="1">
+                    <tr>
+                        <td colspan="3" height="200">
+                            上半部分
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="200">图片</td>
+                        <td>图片</td>
+                        <td>图片</td>
+                    </tr>
+
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="100">
+                底部
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
