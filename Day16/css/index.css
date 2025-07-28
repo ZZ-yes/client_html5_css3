@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient( #ffffff 0% ,#f4f5f9 78%);
+    padding-bottom: 100rem;
+}
+html {
+    font-size: calc(100vw / 414);
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+/*  底部菜单 */
+.menu{
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    width: 414rem;
+    height: 66rem;
+    background-color: #fff;
+}
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+.menu li a{
+    font-size: 22rem;
+    color: #868889;
+}
+.menu li a.active{
+    color: #040404;
+}
+ .menu .shopping-cart::before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 64rem;
+    width: 64rem;
+    border-radius:50% ;
+    bottom: 23rem;
+    right: 31rem;
+
+} 
+ .menu .shopping-cart a{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56rem;
+    height: 56rem;
+    background-color: #6cc51d;
+    border-radius: 50%;
+    color: #fff;
+    bottom: 26rem;
+    right: 35rem;
+
+}
+/* 搜索框 */
+.search-from {
+    position: relative;
+    width: 380rem;
+    height: 50rem;
+    margin: 14rem auto 10rem;
+
+}
+
+.search-from input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f5f9;
+    color: #868889;
+    font-size: 15rem;
+    line-height: 18rem;
+    border: none;
+    border-radius: 5rem;
+    padding-left: 80px;
+}
+
+.search-from i {
+    position: absolute;
+    font-size: 19rem;
+    top: 15rem;
+    color: #868889;
+}
+
+.search-from .fa-search {
+    left: 21rem;
+}
+
+.search-from .fa-sliders {
+    right: 28rem;
+}
+
+/* 轮播图 */
+.page-hero {
+    position: relative;
+    width: 380rem;
+    height: 283rem;
+    margin: 0 auto;
+}
+
+.page-hero .img-list li {
+    position: absolute;
+}
+
+.page-hero .img-list h2 {
+    position: absolute;
+    width: 150rem;
+    height: 54rem;
+    font-size: 18rem;
+    top: 151rem;
+    left: 44rem;
+}
+
+.point {
+    position: absolute;
+    display: flex;
+    left: 16rem;
+    bottom: 30rem;
+}
+
+.point a {
+    width: 6rem;
+    height: 6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 999;
+    margin-right: 7rem;
+}
+
+.point a.active {
+    width: 24rem;
+    background-color: #6cc51d;
+    border-radius: 100rem;
+}
+
+/*  分类列表  */
+.cate-list {
+    width: 100%;
+    overflow: auto;
+    width: 380rem;
+    margin: 20rem auto;
+}
+
+.cate-list header,
+.featured-products header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cate-list h3,
+.featured-products h3 {
+    font-size: 18rem;
+    line-height: 21rem;
+}
+
+.cate-list i,
+.featured-products i {
+    font-size: 18rem;
+    color: #868889;
+}
+
+.cate-inner {
+    display: flex;
+    list-style: none;
+    margin-top: 17rem;
+
+}
+
+.cate-inner li {
+    font-size: 18rem;
+    margin-right: 21rem;
+}
+
+.cate-inner li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cate-inner li>a>span>i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52rem;
+    height: 52rem;
+    font-size: 25rem;
+    color: orange;
+    border-radius: 50%;
+    background-color: #bfa;
+}
+
+.cate-inner li>a>span:nth-child(2) {
+    margin: 12rem 0;
+    font-size: 12rem;
+    color: #868889;
+}
+
+/*  特色商品  */
+.featured-products {
+    width: 380rem;
+    margin: 20rem auto;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    list-style: none;
+}
+
+.products li {
+    width: 181rem;
+    height: 234rem;
+    background-color: #fff;
+    margin-top: 20rem;
+}
+.product-info{
+    position: relative;
+}
+.product-info .fa-heart{
+    position: absolute;
+    font-size: 14rem;
+    color: #868889;
+    top: 10rem;
+    right: 9rem;
+}
+.product-info .fa-solid.fa-heart{
+    color: #fe585a;
+}
+.product-info .products-bg{
+    position: absolute;
+    top: 21rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 84rem;
+    height: 84rem;
+    border-radius: 50%;
+    background-color: #ffe6c2;
+}
+.product-info a{
+    height: 193rem;
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+    padding-top: 43rem ;
+    align-items: center;
+}
+.product-info img {
+    position: relative;
+    width: 91rem;
+    z-index: 99;
+}
+.product-info .price{
+    font-size: 12rem;
+    color: #6cc51d;
+    font-weight: bold;
+    margin-top: 8rem;
+}
+.product-info .title{
+    font-size: 15rem;
+    color: #000;
+    font-weight: bold;
+}
+.product-info .unit{
+    font-size: 12rem;
+    color: #868889;
+}
+.add-cart,.add-product{
+    height: 41rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px #ebebeb solid;
+    font-size: 12rem;
+    color: #010101;
+    font-weight: bold;
+}
+.add-cart i,.add-product i{
+    height: 15rem;
+    color: #6cc51d;
+}
+.add-product{
+    justify-content: space-around;
+}
+.add-cart i{
+    margin-right: 9rem;
+}

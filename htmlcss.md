@@ -2857,3 +2857,790 @@ grid-column-end: span 2;/*占两份*/
 </html>
 ```
 
+#### 自动行列
+
+grid-auto-flow 设置网格项排列方式
+
+​        row,默认值 优先填充行，行满了会自动创建新行
+
+​        column 优先填充列，列满了会自动换到下一列，列满了会自动创建新列
+
+​        dense 紧凑填充，自动填充空白位置，容器有位置后边的元素会自动填充到空白位置
+
+​      grid-auto-rows 指定自动行的大小
+
+```
+grid-auto-rows: 100px 200px;/*第一行100，第二行200，第三行100,……交替*/
+```
+
+#### minmax函数
+
+minmax 一个函数
+
+​        minmax(最小值,最大值)
+
+​        用于设置行和列的大小
+
+​        可选值：像素、auto、min-content、max-content
+
+​        例如：minmax(100px,300px)表示网格项的宽度最小为100px，最大为300px
+
+​      repeat(auto-fill, minmax(100px,auto)) 
+
+​        auto-fill，表示自动计算列，尽可能多的生成列
+
+​        auto-fit，自动计算列，尽可能少的生成列
+
+​        minmax(100px,auto)表示网格项的宽度最小为100px，最大为自动
+
+​        也可以使用minmax(100px,1fr)表示网格项的宽度最小为100px，最大为1fr（占满剩余空间）
+
+#### 移动端
+
+像素（px）
+
+​      \- 像素是屏幕上一个一个会发光的小点
+
+
+
+​    分为物理像素和css像素
+
+​      \- 物理像素：会发光的小点
+
+​      \- css像素：编写样式时使用px
+
+​    \- 我们编写样式时使用css像素，屏幕呈现图像时使用的是物理像素
+
+​      默认情况下在pc中，一个css像素等于一个物理像素（1:1）
+
+​    \- 当我们在浏览器中或系统中对网页进行缩放时，像素比会发生变化
+
+​      比如，当我们将网页放大1.5倍时，css像素是不变的，而物理像素会变为原来的1.5倍大（1:1.5）
+
+
+
+​    视口（viewport）：浏览器的可视区域被称为视口
+
+
+
+​    移动端
+
+​      \- 移动端的项目通常都会运行在手机中，
+
+​        手机屏幕清晰度都是非常高的（物理像素越小，清晰度就越高）
+
+​      \- 例如
+
+​        显示器 
+
+​          宽 两岔半 像素1920
+
+​        手机   
+
+​          宽 半岔 像素1170
+
+​          
+
+​      结论：手机的单个像素要远远小于显示器  
+
+​      
+
+​      如果直接将pc端的页面适配到手机上，效果是非常差的
+
+​        \- 文字会非常小，无法阅读
+
+​        \- 图片会非常小，无法查看
+
+​        \- 布局会错乱，无法点击
+
+​      为了使得pc端的页面在手机上正常显示，
+
+​        在显示pc端时，移动端的浏览器会自动将视口宽度跳转为980px
+
+​        如果pc端页面大小超过了980px，浏览器会自动对页面进行缩小，使得网页可以在浏览器中完整呈现
+
+​        但是即使这样，网页在移动端浏览器的显示效果依然不佳
+
+
+
+​      移动端浏览器，默认的像素比是980：xxxx
+
+​      \- 每一个移动设备在出厂时，都会设计一个最佳的像素比，只有达到最佳像素比时，才能确保网页在移动端浏览器中显示效果最佳
+
+​      \- 例如
+
+​        iphone12
+
+​          物理像素：1170px
+
+​          最佳像素比：390px
+
+​          像素比：1170/390 = 3
+
+​      可以通过调整视口的大小来改变像素比
+
+
+
+             <meta name="viewport" content="width=390px">iphone12的完美视口
+
+​      当一个视口的宽度可以使得像素比变为最佳像素比时，这个视口（宽）就被称为完美视口
+
+
+
+            <meta name="viewport" content="width=device-width">可以确保网页在任何设备下都有一个完美视口
+
+
+
+​      适配问题
+
+​        -开启完美视口后，任何移动设备都能获得一个最佳的浏览效果
+
+​        但是这样却导致了不同设备下视口宽度不同
+
+​        同样是390px，在12pro下时是全屏，se下就出现了滚动条，到ipad下就剩一半了
+
+​        所以，我们就不能在移动端项目中使用px作为单位了
+
+​        \- 解决方案
+
+​          使用vw作为单位，vw=viewport width 视口宽度
+
+​          1vw = 1%视口宽度
+
+
+
+​        实际开发中，设计图的宽度都是像素为单位的，有375px、750px、1125px等
+
+​        在将设计图转换为页面时，单位为vw
+
+​        以750px宽的设计图为例 750px=100vw 1px=0.13333vw
+
+​        所以在css中可以使用rem作为单位
+
+### Day16
+
+#### 媒体查询
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: red;
+        }
+
+        /* 
+            @media 设备类型{}
+                screen 带有屏幕的设备
+                speech 屏幕阅读器
+                print 打印设备
+                all 任意类型设备
+                min-width 指定最小视口，大于等于指定值时，样式生效
+                max-width 指定最大视口，小于等于指定值时，样式生效
+                , 或
+                and 与
+                not 非
+                only 只，主要是避免一些兼容性的问题
+        */
+        /* @media (min-width:500px) and (max-width:800px) {
+            body{
+                background-color: orange;
+            }
+            
+        } */
+        @media only screen {
+            body {
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>哈哈哈哈哈哈</div>
+    <!-- 
+        媒体查询（media query）
+            - 通过媒体查询可以为不同的设备，不同的屏幕大小设置不同的样式
+    -->
+</body>
+
+</html>
+```
+
+#### 移动端页面
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+     <!-- 底部菜单 -->
+      <nav class="menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <i class="fa-solid fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user-circle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+            </li>
+            <li class="shopping-cart">
+                <a href="#">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                </a>
+            </li>
+        </ul>
+      </nav>
+      <!-- 顶部搜索框 -->
+    <form class="search-from" action="#">
+        <input type="text" placeholder="Search keywords…">
+        <i class="fa-solid fa-search"></i>
+        <i class="fa-solid fa-sliders"></i>
+    </form>
+    <!-- 轮播图 -->
+    <div class="page-hero">
+        <ul class="img-list">
+            <li>
+                <a href="#">
+                    <img src="./images/1.png" alt="">
+                    <h2>20% off on your first purchase</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/1.png" alt="">
+                    <h2>20% off on your first purchase</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/1.png" alt="">
+                    <h2>20% off on your first purchase</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/1.png" alt="">
+                    <h2>20% off on your first purchase</h2>
+                </a>
+            </li>
+
+        </ul>
+        <!-- 导航小点 -->
+        <ul class="point">
+            <a class="active" href="javascript:"></a>
+            <a href="javascript:"></a>
+            <a href="javascript:"></a>
+            <a href="javascript:"></a>
+    </div>
+    <!-- 分类列表 -->
+    <div class="cate-list">
+        <header>
+            <h3>Categories</h3>
+            <a href="#">
+                <i class="fa-solid fa-angle-right"></i>
+            </a>
+        </header>
+        <ul class="cate-inner">
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-carrot"></i>
+                    </span>
+                    <span>蔬菜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>
+                        <i class="fa-solid fa-fish"></i>
+                    </span>
+                    <span>海鲜</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- 特色商品 -->
+     <div class="featured-products">
+        <header>
+            <h3>Featured-products</h3>
+            <a href="#">
+                <i class="fa-solid fa-angle-right"></i>
+            </a>
+        </header>
+        <!-- 商品列表 -->
+         <ul class="products">
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="add-cart">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span>Add to cart</span>
+                </div>
+            </li>
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="add-product">
+                    <i class="fa-solid fa-subtract"></i>
+                    <span class="count">1</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </li>
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="add-cart">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span>Add to cart</span>
+                </div>
+            </li>
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="add-product">
+                    <i class="fa-solid fa-subtract"></i>
+                    <span class="count">1</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </li>
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="add-cart">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span>Add to cart</span>
+                </div>
+            </li>
+            <li>
+                <div class="product-info">
+                    <a href="#">
+                        <div class="products-bg"></div>
+                        <img src="./images/peach.png" alt="">
+                        <span class="price">￥8.00</span>
+                        <span class="title">Fresh Peach</span>
+                        <span class="unit">dozen</span>
+
+                    </a>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="add-product">
+                    <i class="fa-solid fa-subtract"></i>
+                    <span class="count">1</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </li>
+         </ul>
+     </div>
+    
+</body>
+
+</html>
+```
+
+#### 响应式布局
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top-bar {
+        position: relative;
+        display: flex;
+        height: 60px;
+        background-color: black;
+        color: #fff;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .top-bar h1 {
+        height: 34px;
+    }
+
+    img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .top-bar .space {
+        flex: auto;
+    }
+
+    .top-bar .user-info {
+        margin-right: 40px;
+    }
+
+    .user-info .login {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 60px;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        background-color: #000;
+    }
+
+    .user-info:active .login {
+        display: flex;
+    }
+
+    .user-info .login::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 95%;
+        height: 1px;
+        background-color: #333;
+    }
+
+
+    .login a {
+        flex: auto;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu .menu-inner {
+        list-style: none;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+    }
+
+    .menu .menu-inner::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 95%;
+        height: 1px;
+        background-color: #333;
+    }
+
+    .menu:active .menu-inner {
+        display: block;
+    }
+
+    .menu .menu-inner a {
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        padding: 20px 0;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        text-decoration: none;
+        color: #fff;
+        margin: 0 40px;
+    }
+
+    @media (min-width:880px) {
+
+        .menu i,
+        .user-info i {
+            display: none;
+        }
+
+        .top-bar .user-info .login {
+            display: flex;
+        }
+        .user-info .login::before,
+        .menu .menu-inner::before {
+        display: none ;/* 在桌面视图下隐藏分隔线 */
+    }
+
+        .user-info .login {
+            justify-content: center;
+            align-items: center;
+            position: static;
+            height: auto;
+            width: auto;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .user-info .login a:hover {
+            color: #ff6700;
+        }
+
+        .top-bar .space {
+            display: none;
+        }
+
+        .top-bar {
+            justify-content: space-around;
+        }
+
+        .top-bar .menu {
+            order: 2;
+        }
+
+        .top-bar .user-info {
+            order: 3;
+        }
+
+        .top-bar .menu .menu-inner {
+            display: flex;
+            position: static;
+            width: auto;
+            background-color: #000;
+        }
+
+        .top-bar .menu .menu-inner a {
+            display: block;
+            font-weight: bold;
+            padding: 0;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .menu .menu-inner a:hover {
+            color: #ff6700;
+
+        }
+
+        .top-bar .menu .menu-inner a,
+        .top-bar .user-info .login a {
+            margin: 0 10px;
+        }
+    }
+</style>
+
+<body>
+    <!-- 
+        响应式布局
+            - 网页会根据窗口大小的改变而改变
+            - 响应式布局可以使得一个页面同时在多种设备中使用，降低我们开发的成本
+            - 但是这种响应式页面，适合内容比较简单的页面
+                如果是内容多的，布局复杂的页面还是建议pc端一套，移动端一套
+            - 响应式布局主要就是借助媒体查询来实现的
+            编写的原则：
+                1.移动端优先
+                2.渐进增强
+                    - 确认断点
+    
+    -->
+    <header class="top-bar">
+        <h1>
+            <a href="">
+                <img src="../Mi/images/logo-mi2.png" alt="">
+            </a>
+        </h1>
+        <div class="space">
+
+        </div>
+        <div class="user-info">
+            <i class="fa-solid fa-user-circle"></i>
+            <!-- 创建一个隐藏层 -->
+            <div class="login">
+                <a href="#">登录</a>
+                <span class="line">|</span>
+                <a href="#">注册</a>
+            </div>
+        </div>
+        <div class="menu">
+            <i class="fa-solid fa-bars"></i>
+            <ul class="menu-inner">
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米影像</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>MIUI</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>loT</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>云服务</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>天星数科</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>有品</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小爱开放平台</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>企业团购</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Location</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+</body>
+
+</html>
+```
+
